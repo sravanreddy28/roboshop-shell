@@ -10,5 +10,5 @@ cd /app
 pip3.6 install -r requirements.txt
 
 systemctl daemon-reload
-systemctl enable shipping
-systemctl restart shipping
+systemctl enable payment
+systemctl restart payment
