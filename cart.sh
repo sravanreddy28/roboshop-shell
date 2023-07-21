@@ -10,6 +10,9 @@ yum install nodejs -y
 echo ">>>>>>> add application user <<<<<<<"
 useradd roboshop
 
+echo ">>>>>>> delete directory <<<<<<<"
+rm -rf /app
+
 echo ">>>>>>> create directory <<<<<<<"
 mkdir /app
 
