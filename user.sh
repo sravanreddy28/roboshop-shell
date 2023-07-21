@@ -6,6 +6,7 @@ yum install nodejs -y
 useradd roboshop
 mkdir /app
 curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user.zip
+rm -rf /app
 cd /app
 unzip /tmp/user.zip
 cd /app
