@@ -13,6 +13,9 @@ yum install nodejs -y
 echo ">>>>> adding user <<<<<"
 useradd roboshop
 
+echo ">>>>> remove directioy <<<<<"
+rm -rf /app
+
 echo ">>>>> create directioy <<<<<"
 mkdir /app
 
