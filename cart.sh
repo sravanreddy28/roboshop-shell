@@ -1,10 +1,10 @@
 echo ">>>>>>> cart service <<<<<<<<"
 cp cart.service /etc/systemd/system/cart.service
 
-echo">>>>>>> nodejs repos download <<<<<<<"
+echo ">>>>>>> nodejs repos download <<<<<<<"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-echo">>>>>>> install  nodejs <<<<<<<"
+echo ">>>>>>> install  nodejs <<<<<<<"
 yum install nodejs -y
 
 echo ">>>>>>> add application user <<<<<<<"
