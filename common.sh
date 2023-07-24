@@ -47,6 +47,7 @@ systemctl restart ${component} &>>${log}
 }
 
 func_java() {
+log=\tmp\roboshop.log
 
 echo -e "\e[25m>>>>> user service file <<<<<\e[0m "
 cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
@@ -63,7 +64,7 @@ echo -e "\e[40m>>>>> download artifacts <<<<<\e[0m "
 curl -L -o /tmp/${component}zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
 
 echo -e "\e[38m>>>>> extract artifacts <<<<<\e[0m "
-cd /app
+cd /app &>>${log}
 unzip /tmp/${component}.zip &>>${log}
 cd /app
 
