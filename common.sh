@@ -38,6 +38,9 @@ yum install mongodb-org-shell -y &>>${log}
 
 echo -e "\e[35m>>>>> load user schema <<<<<\e[0m"
 mongo --host mongodb.sdevops28.online </app/schema/${component}.js &>>${log}
+}
+
+func_systemd(){
 
 echo -e "\e[33m>>>>> enable restart user <<<<<\e[0m"
 systemctl daemon-reload &>>${log}
@@ -75,10 +78,8 @@ mv target/${component}-1.0.jar ${component}.jar &>>${log}
 echo -e "\e[34m>>>>> install mysql <<<<<\e[0m "
 yum install mysql -y &>>${log}
 
- echo -e "\e[33m>>>>> load schema <<<<<\e[0m "
+echo -e "\e[33m>>>>> load schema <<<<<\e[0m "
 mysql -h mysql.sdevops28.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>${log}
 
-echo -e "\e[32m>>>>> enable start service <<<<<\e[0m "
-systemctl enable ${component} &>>${log}
-systemctl restart ${component} &>>${log}
+func_systemd
 }
