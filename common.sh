@@ -66,7 +66,7 @@ curl -L -o /tmp/${component}zip https://roboshop-artifacts.s3.amazonaws.com/${co
 echo -e "\e[38m>>>>> extract artifacts <<<<<\e[0m "
 cd /app &>>${log}
 unzip /tmp/${component}.zip &>>${log}
-cd /app
+cd /app &>>${log}
 
 echo -e "\e[35m>>>>> jar file <<<<<\e[0m "
 mvn clean package &>>${log}
